@@ -1,11 +1,26 @@
 !!!
 %html
   %head
-    %title Depot
+    %title Pragprog Booksオンラインストア
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:class => controller.controller_name}
     -#書き方わからない
-    = stylesheet_link_tag "products", "store"
-    = yield
+    = stylesheet_link_tag "products", "store", "layout"
+    #banner
+      = image_tag("logo.png")
+      = @page_title || "Pragmatic Bookshelf"
+    #columns
+      #side
+        %ul
+          %li
+            %a{:href => "http://www..."}ホーム
+          %li
+            %a{:herf => "http://www.../faq"}よくある質問
+          %li
+            %a{:href => "http://www.../news"}ニュース
+          %li
+            %a{:herf => "http://www.../contact"}お問い合わせ
+    #main
+      = yield
