@@ -6,7 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:class => controller.controller_name}
-    -#書き方わからない
+    -#actionごとに異なるstlesheetを呼ぶ書き方わからない
     = stylesheet_link_tag "products", "store", "layout"
     #banner
       = image_tag("logo.png")
@@ -22,5 +22,5 @@
             %a{:href => "http://www.../news"}ニュース
           %li
             %a{:herf => "http://www.../contact"}お問い合わせ
-    #main
-      = yield
+      #main
+        = yield
